@@ -1,0 +1,17 @@
+<RCC>
+  <qresource>
+    <file>icons/home.png</file>
+    <file>icons/cross.png</file>
+    <file>icons/list-check.png</file>
+    <file>icons/check.png</file>
+    <file>icons/users-alt.png</file>
+    <file>icons/dashboard_white.png</file>
+    <file>icons/image.png</file>
+    <file>icons/log_out_white.png</file>
+    <file>icons/menu.png</file>
+    <file>icons/messages_white.png</file>
+    <file>icons/notifications_white.png</file>
+    <file>icons/profile_white.png</file>
+    <file>icons/settings_white.png</file>
+  </qresource>
+</RCC>
