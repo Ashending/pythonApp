@@ -1,5 +1,13 @@
 <RCC>
   <qresource>
+    <file>icons/user-add.png</file>
+    <file>icons/user (1).png</file>
+    <file>icons/user.png</file>
+    <file>icons/settings.png</file>
+    <file>icons/power.png</file>
+    <file>icons/list-check-green.png</file>
+    <file>icons/users-alt-green.png</file>
+    <file>icons/apps_green.png</file>
     <file>icons/home.png</file>
     <file>icons/cross.png</file>
     <file>icons/list-check.png</file>

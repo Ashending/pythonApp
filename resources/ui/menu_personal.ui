@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1137</width>
-    <height>685</height>
+    <height>764</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
      <widget class="QWidget" name="colapsed_bar_widget" native="true">
       <property name="styleSheet">
        <string notr="true">QWidget {
-	background-color: rgb(85, 170, 127);
+	background-color: rgb(70, 117, 78);
 }
 
 QLabel {
@@ -32,6 +32,10 @@ QLabel {
 QPushButton {
 	height: 30px;
 	border: none;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 QPushButton::checked {
@@ -76,7 +80,8 @@ QPushButton::checked {
            </property>
            <property name="icon">
             <iconset resource="../icon_resources.qrc">
-             <normaloff>:/icons/dashboard_white.png</normaloff>:/icons/dashboard_white.png</iconset>
+             <normaloff>:/icons/dashboard_white.png</normaloff>
+             <normalon>:/icons/apps_green.png</normalon>:/icons/dashboard_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -93,7 +98,8 @@ QPushButton::checked {
            </property>
            <property name="icon">
             <iconset resource="../icon_resources.qrc">
-             <normaloff>:/icons/users-alt.png</normaloff>:/icons/users-alt.png</iconset>
+             <normaloff>:/icons/users-alt.png</normaloff>
+             <normalon>:/icons/users-alt-green.png</normalon>:/icons/users-alt.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -110,7 +116,8 @@ QPushButton::checked {
            </property>
            <property name="icon">
             <iconset resource="../icon_resources.qrc">
-             <normaloff>:/icons/list-check.png</normaloff>:/icons/list-check.png</iconset>
+             <normaloff>:/icons/user (1).png</normaloff>
+             <normalon>:/icons/user.png</normalon>:/icons/user (1).png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -142,7 +149,8 @@ QPushButton::checked {
          </property>
          <property name="icon">
           <iconset resource="../icon_resources.qrc">
-           <normaloff>:/icons/log_out_white.png</normaloff>:/icons/log_out_white.png</iconset>
+           <normaloff>:/icons/log_out_white.png</normaloff>
+           <normalon>:/icons/power.png</normalon>:/icons/log_out_white.png</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -159,13 +167,13 @@ QPushButton::checked {
      <widget class="QWidget" name="expanded_bar_widget" native="true">
       <property name="maximumSize">
        <size>
-        <width>200</width>
+        <width>150</width>
         <height>16777215</height>
        </size>
       </property>
       <property name="styleSheet">
        <string notr="true">QWidget {
-	background-color: rgb(85, 170, 127);
+	background-color: rgb(70, 117, 78);
 }
 
 QLabel {
@@ -254,7 +262,8 @@ QPushButton::checked {
            </property>
            <property name="icon">
             <iconset resource="../icon_resources.qrc">
-             <normaloff>:/icons/dashboard_white.png</normaloff>:/icons/dashboard_white.png</iconset>
+             <normaloff>:/icons/dashboard_white.png</normaloff>
+             <normalon>:/icons/apps_green.png</normalon>:/icons/dashboard_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -271,7 +280,8 @@ QPushButton::checked {
            </property>
            <property name="icon">
             <iconset resource="../icon_resources.qrc">
-             <normaloff>:/icons/users-alt.png</normaloff>:/icons/users-alt.png</iconset>
+             <normaloff>:/icons/users-alt.png</normaloff>
+             <normalon>:/icons/users-alt-green.png</normalon>:/icons/users-alt.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -284,11 +294,12 @@ QPushButton::checked {
          <item>
           <widget class="QPushButton" name="exp_listado">
            <property name="text">
-            <string>Listado</string>
+            <string>Perfil</string>
            </property>
            <property name="icon">
             <iconset resource="../icon_resources.qrc">
-             <normaloff>:/icons/list-check.png</normaloff>:/icons/list-check.png</iconset>
+             <normaloff>:/icons/user (1).png</normaloff>
+             <normalon>:/icons/user.png</normalon>:/icons/user (1).png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -320,7 +331,8 @@ QPushButton::checked {
          </property>
          <property name="icon">
           <iconset resource="../icon_resources.qrc">
-           <normaloff>:/icons/log_out_white.png</normaloff>:/icons/log_out_white.png</iconset>
+           <normaloff>:/icons/log_out_white.png</normaloff>
+           <normalon>:/icons/power.png</normalon>:/icons/log_out_white.png</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -389,7 +401,7 @@ QPushButton::checked {
               </property>
               <property name="icon">
                <iconset resource="../icon_resources.qrc">
-                <normaloff>:/icons/image.png</normaloff>:/icons/image.png</iconset>
+                <normaloff>:/icons/settings.png</normaloff>:/icons/settings.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -416,12 +428,263 @@ QPushButton::checked {
           <string notr="true">background-color: rgb(255, 255, 255);</string>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
-         <widget class="QWidget" name="dashboard"/>
-         <widget class="QWidget" name="listado"/>
-         <widget class="QWidget" name="opciones"/>
-         <widget class="QWidget" name="gestion"/>
+         <widget class="QWidget" name="dashboard">
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="QWidget" name="widget_2" native="true">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>120</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QWidget{
+	background-color: rgb(195, 222, 193);
+}
+
+QLabel{
+	color: rgb(70, 117, 78);
+}</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_2">
+              <item row="0" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>338</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_6">
+                  <item>
+                   <spacer name="verticalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_4">
+                    <property name="font">
+                     <font>
+                      <pointsize>18</pointsize>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="text">
+                     <string>Menu Gestion</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_4">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>28</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>348</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QWidget" name="widget_3" native="true">
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item>
+                 <widget class="QLabel" name="label_5">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel {
+	color: rgb(70, 117, 78);
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Listado Trabajadores</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>478</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border: none;
+	color: white;
+	background-color: rgb(70, 117, 78);
+	text-align: center;
+	height: 35px;
+	padding-left: 10px;
+	padding-right: 10px;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Agregar Trabajador</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../icon_resources.qrc">
+                    <normaloff>:/icons/user-add.png</normaloff>:/icons/user-add.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QTableWidget" name="tableWidget">
+             <property name="styleSheet">
+              <string notr="true">QHeaderView::section {
+	font-weight: bold;
+	color: white;
+	background-color: rgb(70, 117, 78);
+	
+}</string>
+             </property>
+             <column>
+              <property name="text">
+               <string>RUT</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Nombre</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Sexo</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Dirección</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Teléfono</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Cargo</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Fecha Ingreso</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Área</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Departamento</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="listado">
+          <widget class="QLabel" name="label_6">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>40</y>
+             <width>141</width>
+             <height>111</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>gestion</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="opciones">
+          <widget class="QLabel" name="label_7">
+           <property name="geometry">
+            <rect>
+             <x>400</x>
+             <y>130</y>
+             <width>111</width>
+             <height>61</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Listado</string>
+           </property>
+          </widget>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -441,8 +704,8 @@ QPushButton::checked {
    <slot>setHidden(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>312</x>
-     <y>41</y>
+     <x>265</x>
+     <y>47</y>
     </hint>
     <hint type="destinationlabel">
      <x>39</x>
@@ -457,12 +720,12 @@ QPushButton::checked {
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>302</x>
-     <y>46</y>
+     <x>265</x>
+     <y>47</y>
     </hint>
     <hint type="destinationlabel">
-     <x>225</x>
-     <y>372</y>
+     <x>216</x>
+     <y>381</y>
     </hint>
    </hints>
   </connection>

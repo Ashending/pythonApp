@@ -15,16 +15,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
-    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
-    QStackedWidget, QVBoxLayout, QWidget)
-import rc_menu_personal
+from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QHeaderView,
+    QLabel, QMainWindow, QPushButton, QSizePolicy,
+    QSpacerItem, QStackedWidget, QTableWidget, QTableWidgetItem,
+    QVBoxLayout, QWidget)
+import ../resources/menu_rrhh_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1137, 685)
+        MainWindow.resize(1137, 764)
         MainWindow.setStyleSheet(u"background-color: rgb(234, 241, 237);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -33,7 +34,7 @@ class Ui_MainWindow(object):
         self.colapsed_bar_widget = QWidget(self.centralwidget)
         self.colapsed_bar_widget.setObjectName(u"colapsed_bar_widget")
         self.colapsed_bar_widget.setStyleSheet(u"QWidget {\n"
-"	background-color: rgb(85, 170, 127);\n"
+"	background-color: rgb(70, 117, 78);\n"
 "}\n"
 "\n"
 "QLabel {\n"
@@ -43,6 +44,10 @@ class Ui_MainWindow(object):
 "QPushButton {\n"
 "	height: 30px;\n"
 "	border: none;\n"
+"	border-top-left-radius: 10px;\n"
+"	border-top-right-radius: 10px;\n"
+"	border-bottom-left-radius: 10px;\n"
+"	border-bottom-right-radius: 10px;\n"
 "}\n"
 "\n"
 "QPushButton::checked {\n"
@@ -75,6 +80,7 @@ class Ui_MainWindow(object):
         self.col_dashboard.setObjectName(u"col_dashboard")
         icon = QIcon()
         icon.addFile(u":/icons/dashboard_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/icons/apps_green.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
         self.col_dashboard.setIcon(icon)
         self.col_dashboard.setCheckable(True)
         self.col_dashboard.setAutoExclusive(True)
@@ -85,6 +91,7 @@ class Ui_MainWindow(object):
         self.col_gestion.setObjectName(u"col_gestion")
         icon1 = QIcon()
         icon1.addFile(u":/icons/users-alt.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u":/icons/users-alt-green.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
         self.col_gestion.setIcon(icon1)
         self.col_gestion.setCheckable(True)
         self.col_gestion.setAutoExclusive(True)
@@ -94,7 +101,8 @@ class Ui_MainWindow(object):
         self.col_listado = QPushButton(self.colapsed_bar_widget)
         self.col_listado.setObjectName(u"col_listado")
         icon2 = QIcon()
-        icon2.addFile(u":/icons/list-check.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u":/icons/user (1).png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u":/icons/user.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
         self.col_listado.setIcon(icon2)
         self.col_listado.setCheckable(True)
         self.col_listado.setAutoExclusive(True)
@@ -112,6 +120,7 @@ class Ui_MainWindow(object):
         self.pushButton_7.setObjectName(u"pushButton_7")
         icon3 = QIcon()
         icon3.addFile(u":/icons/log_out_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u":/icons/power.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
         self.pushButton_7.setIcon(icon3)
         self.pushButton_7.setCheckable(True)
         self.pushButton_7.setAutoExclusive(False)
@@ -123,9 +132,9 @@ class Ui_MainWindow(object):
 
         self.expanded_bar_widget = QWidget(self.centralwidget)
         self.expanded_bar_widget.setObjectName(u"expanded_bar_widget")
-        self.expanded_bar_widget.setMaximumSize(QSize(200, 16777215))
+        self.expanded_bar_widget.setMaximumSize(QSize(150, 16777215))
         self.expanded_bar_widget.setStyleSheet(u"QWidget {\n"
-"	background-color: rgb(85, 170, 127);\n"
+"	background-color: rgb(70, 117, 78);\n"
 "}\n"
 "\n"
 "QLabel {\n"
@@ -250,7 +259,7 @@ class Ui_MainWindow(object):
         self.pushButton_10 = QPushButton(self.widget)
         self.pushButton_10.setObjectName(u"pushButton_10")
         icon5 = QIcon()
-        icon5.addFile(u":/icons/image.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u":/icons/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_10.setIcon(icon5)
         self.pushButton_10.setIconSize(QSize(20, 20))
         self.pushButton_10.setCheckable(True)
@@ -269,16 +278,152 @@ class Ui_MainWindow(object):
         self.stackedWidget.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.dashboard = QWidget()
         self.dashboard.setObjectName(u"dashboard")
+        self.gridLayout_4 = QGridLayout(self.dashboard)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.widget_2 = QWidget(self.dashboard)
+        self.widget_2.setObjectName(u"widget_2")
+        self.widget_2.setMaximumSize(QSize(16777215, 120))
+        self.widget_2.setStyleSheet(u"QWidget{\n"
+"	background-color: rgb(195, 222, 193);\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"	color: rgb(70, 117, 78);\n"
+"}")
+        self.gridLayout_2 = QGridLayout(self.widget_2)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.horizontalSpacer_3 = QSpacerItem(338, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_5.addItem(self.horizontalSpacer_3)
+
+        self.verticalLayout_6 = QVBoxLayout()
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.verticalSpacer_3 = QSpacerItem(20, 28, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer_3)
+
+        self.label_4 = QLabel(self.widget_2)
+        self.label_4.setObjectName(u"label_4")
+        font1 = QFont()
+        font1.setPointSize(18)
+        font1.setBold(True)
+        self.label_4.setFont(font1)
+        self.label_4.setStyleSheet(u"")
+
+        self.verticalLayout_6.addWidget(self.label_4)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 28, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer_4)
+
+
+        self.horizontalLayout_5.addLayout(self.verticalLayout_6)
+
+        self.horizontalSpacer_4 = QSpacerItem(348, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_5.addItem(self.horizontalSpacer_4)
+
+
+        self.gridLayout_2.addLayout(self.horizontalLayout_5, 0, 0, 1, 1)
+
+
+        self.gridLayout_4.addWidget(self.widget_2, 0, 0, 1, 1)
+
+        self.widget_3 = QWidget(self.dashboard)
+        self.widget_3.setObjectName(u"widget_3")
+        self.gridLayout_3 = QGridLayout(self.widget_3)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.horizontalLayout_6 = QHBoxLayout()
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.label_5 = QLabel(self.widget_3)
+        self.label_5.setObjectName(u"label_5")
+        font2 = QFont()
+        font2.setPointSize(14)
+        font2.setBold(True)
+        self.label_5.setFont(font2)
+        self.label_5.setStyleSheet(u"QLabel {\n"
+"	color: rgb(70, 117, 78);\n"
+"}")
+
+        self.horizontalLayout_6.addWidget(self.label_5)
+
+        self.horizontalSpacer_2 = QSpacerItem(478, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_6.addItem(self.horizontalSpacer_2)
+
+        self.pushButton = QPushButton(self.widget_3)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setStyleSheet(u"QPushButton {\n"
+"	border-top-left-radius: 10px;\n"
+"	border-top-right-radius: 10px;\n"
+"	border-bottom-left-radius: 10px;\n"
+"	border-bottom-right-radius: 10px;\n"
+"	border: none;\n"
+"	color: white;\n"
+"	background-color: rgb(70, 117, 78);\n"
+"	text-align: center;\n"
+"	height: 35px;\n"
+"	padding-left: 10px;\n"
+"	padding-right: 10px;\n"
+"}")
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/user-add.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pushButton.setIcon(icon6)
+
+        self.horizontalLayout_6.addWidget(self.pushButton)
+
+
+        self.gridLayout_3.addLayout(self.horizontalLayout_6, 0, 0, 1, 1)
+
+
+        self.gridLayout_4.addWidget(self.widget_3, 1, 0, 1, 1)
+
+        self.tableWidget = QTableWidget(self.dashboard)
+        if (self.tableWidget.columnCount() < 9):
+            self.tableWidget.setColumnCount(9)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(7, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(8, __qtablewidgetitem8)
+        self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.setStyleSheet(u"QHeaderView::section {\n"
+"	font-weight: bold;\n"
+"	color: white;\n"
+"	background-color: rgb(70, 117, 78);\n"
+"	\n"
+"}")
+
+        self.gridLayout_4.addWidget(self.tableWidget, 2, 0, 1, 1)
+
         self.stackedWidget.addWidget(self.dashboard)
         self.listado = QWidget()
         self.listado.setObjectName(u"listado")
+        self.label_6 = QLabel(self.listado)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setGeometry(QRect(260, 40, 141, 111))
         self.stackedWidget.addWidget(self.listado)
         self.opciones = QWidget()
         self.opciones.setObjectName(u"opciones")
+        self.label_7 = QLabel(self.opciones)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setGeometry(QRect(400, 130, 111, 61))
         self.stackedWidget.addWidget(self.opciones)
-        self.gestion = QWidget()
-        self.gestion.setObjectName(u"gestion")
-        self.stackedWidget.addWidget(self.gestion)
 
         self.verticalLayout_5.addWidget(self.stackedWidget)
 
@@ -299,7 +444,7 @@ class Ui_MainWindow(object):
         self.pushButton_7.toggled.connect(MainWindow.close)
         self.pushButton_8.toggled.connect(MainWindow.close)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -316,9 +461,32 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.exp_dashboard.setText(QCoreApplication.translate("MainWindow", u"Dashboard", None))
         self.exp_gestion.setText(QCoreApplication.translate("MainWindow", u"Gestion", None))
-        self.exp_listado.setText(QCoreApplication.translate("MainWindow", u"Listado", None))
+        self.exp_listado.setText(QCoreApplication.translate("MainWindow", u"Perfil", None))
         self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"Sign Out", None))
         self.menu.setText("")
         self.pushButton_10.setText("")
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Menu Gestion", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Listado Trabajadores", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Agregar Trabajador", None))
+        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"RUT", None));
+        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Nombre", None));
+        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
+        ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Direcci\u00f3n", None));
+        ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Tel\u00e9fono", None));
+        ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Cargo", None));
+        ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Fecha Ingreso", None));
+        ___qtablewidgetitem7 = self.tableWidget.horizontalHeaderItem(7)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"\u00c1rea", None));
+        ___qtablewidgetitem8 = self.tableWidget.horizontalHeaderItem(8)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Departamento", None));
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"gestion", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Listado", None))
     # retranslateUi
 
