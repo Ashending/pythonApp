@@ -1,10 +1,10 @@
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
 import sys
-from sidebar import MySideBar
+from app_menu.src_menu_hr import MenuHR
 
 app = QApplication(sys.argv)
 
-window = MySideBar()
+window = MenuHR()
 window.show()
 
 app.exec()

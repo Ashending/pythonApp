@@ -1,4 +1,4 @@
-from ui_menu_personal import Ui_MainWindow
+from app_menu.menu_hr import Ui_MainWindow
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
 
 class MySideBar(QMainWindow, Ui_MainWindow):

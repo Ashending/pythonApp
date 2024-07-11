@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QHeaderVi
     QLabel, QMainWindow, QPushButton, QSizePolicy,
     QSpacerItem, QStackedWidget, QTableWidget, QTableWidgetItem,
     QVBoxLayout, QWidget)
-import ../resources/menu_rrhh_rc
+import resources.menu_hr_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -276,6 +276,12 @@ class Ui_MainWindow(object):
         self.stackedWidget = QStackedWidget(self.main_screen_widget)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.listado = QWidget()
+        self.listado.setObjectName(u"listado")
+        self.label_6 = QLabel(self.listado)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setGeometry(QRect(260, 40, 141, 111))
+        self.stackedWidget.addWidget(self.listado)
         self.dashboard = QWidget()
         self.dashboard.setObjectName(u"dashboard")
         self.gridLayout_4 = QGridLayout(self.dashboard)
@@ -380,44 +386,38 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.widget_3, 1, 0, 1, 1)
 
-        self.tableWidget = QTableWidget(self.dashboard)
-        if (self.tableWidget.columnCount() < 9):
-            self.tableWidget.setColumnCount(9)
+        self.tabla_trabajadores = QTableWidget(self.dashboard)
+        if (self.tabla_trabajadores.columnCount() < 9):
+            self.tabla_trabajadores.setColumnCount(9)
         __qtablewidgetitem = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.tabla_trabajadores.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        self.tabla_trabajadores.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        self.tabla_trabajadores.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        self.tabla_trabajadores.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        self.tabla_trabajadores.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        self.tabla_trabajadores.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        self.tabla_trabajadores.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(7, __qtablewidgetitem7)
+        self.tabla_trabajadores.setHorizontalHeaderItem(7, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(8, __qtablewidgetitem8)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setStyleSheet(u"QHeaderView::section {\n"
+        self.tabla_trabajadores.setHorizontalHeaderItem(8, __qtablewidgetitem8)
+        self.tabla_trabajadores.setObjectName(u"tabla_trabajadores")
+        self.tabla_trabajadores.setStyleSheet(u"QHeaderView::section {\n"
 "	font-weight: bold;\n"
 "	color: white;\n"
 "	background-color: rgb(70, 117, 78);\n"
 "	\n"
 "}")
 
-        self.gridLayout_4.addWidget(self.tableWidget, 2, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.tabla_trabajadores, 2, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.dashboard)
-        self.listado = QWidget()
-        self.listado.setObjectName(u"listado")
-        self.label_6 = QLabel(self.listado)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(260, 40, 141, 111))
-        self.stackedWidget.addWidget(self.listado)
         self.opciones = QWidget()
         self.opciones.setObjectName(u"opciones")
         self.label_7 = QLabel(self.opciones)
@@ -444,7 +444,7 @@ class Ui_MainWindow(object):
         self.pushButton_7.toggled.connect(MainWindow.close)
         self.pushButton_8.toggled.connect(MainWindow.close)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -465,28 +465,28 @@ class Ui_MainWindow(object):
         self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"Sign Out", None))
         self.menu.setText("")
         self.pushButton_10.setText("")
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"gestion", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Menu Gestion", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Listado Trabajadores", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Agregar Trabajador", None))
-        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem = self.tabla_trabajadores.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"RUT", None));
-        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1 = self.tabla_trabajadores.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Nombre", None));
-        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2 = self.tabla_trabajadores.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
-        ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem3 = self.tabla_trabajadores.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Direcci\u00f3n", None));
-        ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
+        ___qtablewidgetitem4 = self.tabla_trabajadores.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Tel\u00e9fono", None));
-        ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(5)
+        ___qtablewidgetitem5 = self.tabla_trabajadores.horizontalHeaderItem(5)
         ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Cargo", None));
-        ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
+        ___qtablewidgetitem6 = self.tabla_trabajadores.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Fecha Ingreso", None));
-        ___qtablewidgetitem7 = self.tableWidget.horizontalHeaderItem(7)
+        ___qtablewidgetitem7 = self.tabla_trabajadores.horizontalHeaderItem(7)
         ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"\u00c1rea", None));
-        ___qtablewidgetitem8 = self.tableWidget.horizontalHeaderItem(8)
+        ___qtablewidgetitem8 = self.tabla_trabajadores.horizontalHeaderItem(8)
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Departamento", None));
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"gestion", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Listado", None))
     # retranslateUi
 
